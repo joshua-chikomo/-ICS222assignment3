@@ -1,0 +1,18 @@
+﻿body {
+    /* to centre page on screen*/
+
+    background-color: linen;
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+    ul li:before {
+        content: '✓';
+    }

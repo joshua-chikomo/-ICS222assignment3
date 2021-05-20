@@ -1,0 +1,42 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+*{
+    box-sizing:border-box;
+
+}
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom:20px ;
+    position:relative;
+}
+.form-control input{
+    border: 2px solid #808080;
+
+}
+.form-control i{
+    position:absolute;
+    visibility:hidden;
+}
+.form-control.success input{
+    border-color :forestgreen
+}
+.form-control.error small{
+    visibility:visible;
+    color:red; 
+
+}
+.form-control.error input{
+    border-color :red
+}
+.form-control small{
+    visibility: hidden;
+    position :absolute;
+    bottom:0;
+    left:0;
+}
+body {
+    background-color: gold;
+    align-items:center;
+
+}

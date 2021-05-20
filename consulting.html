@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="form.css">
+   
+    <title>
+        
+    </title>
+</head>
+<body>
+    <form class ="form" id="form ">
+        <div class=" form-control ">
+        <Label for="Name">Name :</Label>
+        <input name ="Name" type="text" required id="Name"> (Text only field)
+
+            <small> Error message</small>
+            </div>
+        <br />
+        <div class=" form-control ">
+            <Label for="Number">Number:</Label>
+                <input name ="Number" type="number" required id="Number">(Numeric only field)
+            <small> Error message</small>
+
+        </div>
+        <div class=" form-control ">
+            <Label for="Email">Email:</Label>
+        <input name ="Email" type="email" id ="Email">(Email formatted alphanumeric field)
+            <small> Error message</small>
+
+        </div>
+
+
+
+        <div class=" form-control ">
+                
+       
+        <Label for="Enquiry">Enquiry:</Label>
+        <input name ="Enquiry" type="text" style="width: 499px; height: 172px" id ="Enquiry">(Memo field
+        <small> Error message</small> 
+        </div>
+        <br />
+        <button>Submit</button>
+        
+           
+
+
+
+    </form>
+    <script type="text/javascript">
+        const form = document.getElementById('form');
+        const Email = document.getElementById('Email');
+        const Name = document.getElementById('Name');
+        const Number = document.getElementById('Number');
+        const Enquiry = document.getElementById('Enquiry');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            checkInputs();
+        }
+        );
+
+        function checkInputs()
+        {
+            const EmailValue = Email.value.trim();
+            const EnquiryValue = Enquiry.value.trim();
+            const NameValue = Name.value.trim();
+            const NumberValue = Number.value.trim();
+            if (NameValue === '') {
+                setErrorFor(Name, 'Name cannot be blank');
+
+            } else {
+                setSuccessFor(Name);
+                 
+            }
+            if (NumberValue === '') {
+                setErrorFor(Number, 'Name cannot be blank');
+
+            } else {
+                setSuccessFor(Number);
+
+            }
+            if (EmailValue === '') {
+                setErrorFor(Email, 'Name cannot be blank');
+
+            } else {
+                setSuccessFor(Email);
+
+            }
+
+        }
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('snall');
+            small.innerText = message;
+            formControl.class = 'form-control error';
+
+
+        }
+    </script>
+</body>
+</html>
